@@ -1,0 +1,29 @@
+<script src="./script/jquery.js"></script>
+
+<script>
+  let using = function(url) {
+    $.get(url, data => {
+      $("head").append("<style>" + data + "</style>");
+      console.log("sukses nambah:" + url);
+    });
+  };
+  let app = $(document);
+  let createUi = function(type) {
+    let result = document.createElement(type);
+    result.child = child => {
+      result.appendChild(child);
+    };
+    result.attr = val => {
+      $.each(val, function(key, isi) {
+        console.log(isi);
+        result.setAttribute(isi.type, isi.value);
+      });
+    };
+    //document.body.appendChild(result);
+    return result;
+  };
+  let render = element => {
+    document.body.appendChild(element);
+  };
+</script>
+<script src="./app/app.js"></script>

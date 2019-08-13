@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  width: 50%;
+  height: 100vh;
+  background: rgb(175, 174, 174);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  float: left;
+  &:nth-child(2) {
+    background: white;
+    position: relative;
+  }
+}
+.txtbox {
+  width: 80%;
+  height: 40%;
+  outline: none;
+  font-size: 200%;
+  resize: none;
+  overflow: hidden;
+  padding: 35px;
+  &:nth-child(1) {
+    margin-top: 5%;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+  &:nth-child(2) {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+}
+#btn {
+  margin-top: 2%;
+  margin-left: 70%;
+}
