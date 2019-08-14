@@ -9,7 +9,7 @@ body {
 .wrapper {
   width: 50%;
   height: 100vh;
-  background: #afaeae;
+  background: #63c4ff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,27 +34,32 @@ body {
 
 .txtbox {
   width: 80%;
-  height: 40%;
+  height: 30%;
   outline: none;
   font-size: 200%;
   resize: none;
   overflow: hidden;
   padding: 35px;
-}
-
-.txtbox:nth-child(1) {
-  margin-top: 5%;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
+  border: 0;
 }
 
 .txtbox:nth-child(2) {
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+  margin-top: 2%;
+  background: #a56efd60;
+  color: #daff03;
+}
+
+.txtbox:nth-child(4) {
+  background: #f8ffc0;
 }
 
 #btn {
   margin-top: 2%;
-  margin-left: 70%;
+  margin-left: 60%;
+  width: 20%;
+  height: 5%;
+  border: 0;
+  background: #c0ff5a;
+  color: #73a81d;
 }
 /*# sourceMappingURL=style.css.map */
