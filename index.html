@@ -21,6 +21,9 @@
         result.setAttribute(isi.type, isi.value);
       });
     };
+    result.toHead = () => {
+      document.head.appendChild(result);
+    };
     //document.body.appendChild(result);
     return result;
   };

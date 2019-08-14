@@ -6,12 +6,15 @@ let jsCode = createUI("textarea");
 let rnd = createUI("button");
 let wrapper = createUI("div");
 let wrapperRunner = createUI("div");
+let styy = createUI("style");
 app.ready(function() {
   setTimeout(function() {
     txtCode.attr([{ type: "class", value: "txtbox" }]);
     txtCode.attr([{ type: "id", value: "txtbox" }]);
     jsCode.attr([{ type: "class", value: "txtbox" }]);
     jsCode.attr([{ type: "id", value: "jsbox" }]);
+    styy.attr([{ type: "id", value: "true" }]);
+    styy.toHead();
     cssCode.attr([
       { type: "class", value: "txtbox" },
       { type: "id", value: "cssbox" }
@@ -42,10 +45,12 @@ function run() {
   let parent = $("#part").parent();
   parent.css({ display: "flex", justifyContent: "center" });
   part.innerHTML = $("#txtbox").val();
-  $("style").append($("#cssbox").val());
-  let scr = createUI("script");
-  scr.append($("#jsbox").val());
-  scr.render();
+  $("#true").html($("#cssbox").val());
+  $("#false").remove();
+  let scyy = createUI("script");
+  scyy.attr([{ type: "id", value: "false" }]);
+  scyy.render();
+  $("#false").html($("#jsbox").val());
 }
 $(document).keydown(function(e) {
   if (e.key == "s" && e.ctrlKey) {
