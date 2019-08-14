@@ -38,10 +38,19 @@ app.ready(function() {
 
 //event
 function run() {
-  $("#part").css({ width: "100%", height: "100%" });
+  $("#part").css({ width: "90%", height: "90%" });
+  let parent = $("#part").parent();
+  parent.css({ display: "flex", justifyContent: "center" });
   part.innerHTML = $("#txtbox").val();
   $("style").append($("#cssbox").val());
   let scr = createUI("script");
   scr.append($("#jsbox").val());
   scr.render();
 }
+$(document).keydown(function(e) {
+  if (e.key == "s" && e.ctrlKey) {
+    event.preventDefault();
+    console.log("tersave");
+    rnd.click();
+  }
+});
