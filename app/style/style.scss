@@ -1,7 +1,9 @@
 body {
   margin: 0;
 }
-
+::-webkit-scrollbar {
+  width: 0;
+}
 .wrapper {
   width: 50%;
   height: 100vh;
@@ -14,6 +16,7 @@ body {
   &:nth-child(2) {
     background: white;
     position: relative;
+    overflow-y: scroll;
   }
 }
 .txtbox {
