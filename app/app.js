@@ -10,14 +10,36 @@ let styy = createUI("style");
 app.ready(function() {
   setTimeout(function() {
     txtCode.attr([{ type: "class", value: "txtbox" }]);
-    txtCode.attr([{ type: "id", value: "txtbox" }]);
+    txtCode.attr([
+      { type: "id", value: "txtbox" },
+      { type: "spellcheck", value: "false" },
+      {
+        type: "onkeydown",
+        value:
+          "if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+      }
+    ]);
     jsCode.attr([{ type: "class", value: "txtbox" }]);
-    jsCode.attr([{ type: "id", value: "jsbox" }]);
+    jsCode.attr([
+      { type: "id", value: "jsbox" },
+      { type: "spellcheck", value: "false" },
+      {
+        type: "onkeydown",
+        value:
+          "if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+      }
+    ]);
     styy.attr([{ type: "id", value: "true" }]);
     styy.toHead();
     cssCode.attr([
       { type: "class", value: "txtbox" },
-      { type: "id", value: "cssbox" }
+      { type: "id", value: "cssbox" },
+      { type: "spellcheck", value: "false" },
+      {
+        type: "onkeydown",
+        value:
+          "if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+      }
     ]);
     wrapper.render();
     wrapperRunner.render();
