@@ -9,7 +9,7 @@ body {
   height: 100vh;
   background: #63c4ff;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   float: left;
@@ -23,7 +23,7 @@ body {
   width: 80%;
   height: 30%;
   outline: none;
-  font-size: 200%;
+  font-size: 120%;
   resize: none;
   overflow: hidden;
   padding: 35px;
@@ -42,12 +42,23 @@ body {
     color: #7e4b12;
   }
 }
-#btn {
+.btn {
   margin-top: 2%;
-  margin-left: 60%;
+  margin-left: 5%;
   width: 20%;
-  height: 5%;
+  height: 120%;
   border: 0;
   background: #c0ff5a;
   color: #73a81d;
+  float: left;
+  outline: none;
+  &:nth-child(1) {
+    margin-left: 35%;
+  }
+}
+.btnW {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
