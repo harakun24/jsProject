@@ -17,6 +17,8 @@ app.ready(function() {
       { type: "id", value: "txtbox" },
       { type: "placeholder", value: "this is html field!" },
       { type: "spellcheck", value: "false" },
+      { type: "onkeyup", value: "hkeyup(event)" },
+
       {
         type: "onkeydown",
         value:
@@ -28,6 +30,7 @@ app.ready(function() {
       { type: "placeholder", value: "this is js field!" },
       { type: "id", value: "jsbox" },
       { type: "spellcheck", value: "false" },
+      { type: "onkeyup", value: "jskeyup(event)" },
       {
         type: "onkeydown",
         value:
@@ -38,6 +41,7 @@ app.ready(function() {
     styy.toHead();
     cssCode.attr([
       { type: "placeholder", value: "this is css field!" },
+      { type: "onkeyup", value: "jskeyup(event)" },
       { type: "class", value: "txtbox" },
       { type: "id", value: "cssbox" },
       { type: "spellcheck", value: "false" },
@@ -74,6 +78,7 @@ app.ready(function() {
       { type: "id", value: "btn2" }
     ]);
   });
+
   //using("footer.html");
 });
 
@@ -105,4 +110,12 @@ function zoom() {
     $(".txtbox").css("fontSize", "120%");
     status = 1;
   }
+}
+function jskeyup(e) {
+  if (e.key == "}" || e.key == ";") {
+    rnd.click();
+  }
+}
+function hkeyup(e) {
+  rnd.click();
 }
