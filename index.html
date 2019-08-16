@@ -7,6 +7,19 @@
       console.log("sukses nambah:" + url);
     });
   };
+  let fread = function(url) {
+    let u = createUI("a");
+    u.attr([{ type: "id", value: "idtempsatu" }]);
+    u.render();
+    $("#idtempsatu").load(url);
+  };
+  let yyy = url => {
+    fread(url);
+    setTimeout(() => {
+      //alert($("#idtempsatu").html());
+      return $("#idtempsatu").html();
+    }, 10);
+  };
   let app = $(document);
   let createUI = function(type) {
     let result = document.createElement(type);
@@ -26,6 +39,39 @@
     };
     //document.body.appendChild(result);
     return result;
+    result.unset = () => {
+      document.body.removeChild(result);
+    };
+  };
+  let open = function(runer) {
+    app.ready(() => {
+      setTimeout(() => {
+        runer();
+      }, 0);
+    });
+  };
+  let async = fun => {
+    setTimeout(() => {
+      fun();
+    }, 0);
+  };
+  let fsave = (ft, name, type) => {
+    //alert("text");
+    var file = new Blob([ft], { type: type });
+    if (window.navigator.msSaveOrOpenBlob)
+      window.navigator.msSaveBlob(file, name);
+    else {
+      let a = createUI("a");
+      let url = URL.createObjectURL(file);
+      a.href = url;
+      a.download = name;
+      a.render();
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    }
   };
 </script>
-<script src="./app/app.js"></script>
+<script src="./app/app3.js"></script>
