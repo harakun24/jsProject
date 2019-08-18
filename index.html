@@ -13,11 +13,11 @@
     u.render();
     $("#idtempsatu").load(url);
   };
-  let yyy = url => {
+  let yyy = (url, target) => {
     fread(url);
     setTimeout(() => {
       //alert($("#idtempsatu").html());
-      return $("#idtempsatu").html();
+      target = $("#idtempsatu").html();
     }, 10);
   };
   let app = $(document);
