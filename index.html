@@ -7,19 +7,32 @@
       console.log("sukses nambah:" + url);
     });
   };
-  let fread = function(url) {
-    let u = createUI("a");
-    u.attr([{ type: "id", value: "idtempsatu" }]);
-    u.render();
-    $("#idtempsatu").load(url);
+  let upload = function() {
+    fopen = createUI("input");
+    fopen.attr([
+      { type: "id", value: "openb" },
+      { type: "type", value: "file" }
+    ]);
+    fopen.render();
+    if ("FileReader" in window) $("#openb").click();
+    else alert("browser terlalu jadul");
+    alert("hoi");
+
+    //
+    $("#openb").change(event => {
+      var ftl = event.target.file;
+      if (ftl) {
+        var reader = new FileReader();
+        reader.onload = function(flevent) {
+          var txtfile = flevent.target.result;
+          console.log(txtfile);
+          $("#text").val(txtfile);
+        };
+        reader.readAsText(ftl, "UTF-8");
+      }
+    });
   };
-  let yyy = (url, target) => {
-    fread(url);
-    setTimeout(() => {
-      //alert($("#idtempsatu").html());
-      target = $("#idtempsatu").html();
-    }, 10);
-  };
+
   let app = $(document);
   let createUI = function(type) {
     let result = document.createElement(type);

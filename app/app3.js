@@ -1,3 +1,4 @@
+// console.log(true);
 using("app/style/main.css");
 open(() => {
   btn = createUI("button");
@@ -14,10 +15,7 @@ open(() => {
   btn.render();
   btn.attr([{ type: "id", value: "btndownload" }]);
   $("#btndownload").click(() => {
-    //fsave($("#text").val(), $("#fname").val());
-    // $("#text").fread($("#fname").val());
-    //let v = fread($("#fname").val());
-    let r = yyy($("#fname").val());
-    alert(r);
+    // upload($("#fname").val(), $("#text"));
+    upload();
   });
 });
