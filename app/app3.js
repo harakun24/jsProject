@@ -16,8 +16,11 @@ open(() => {
   btn.attr([{ type: "id", value: "btndownload" }]);
   $("#btndownload").click(() => {
     // upload($("#fname").val(), $("#text"));
-    upload(() => {
-      console.log(tfile);
+    async(() => {
+      upload(() => {
+        $("#text").val(tfile);
+        $("#fname").val(nfile);
+      });
     });
   });
 });

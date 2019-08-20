@@ -1,7 +1,7 @@
 <script src="./script/jquery.js"></script>
 
 <script>
-  var tmmp, tfile, k;
+  var tmmp, tfile, nfile, k;
   let using = function(url) {
     $.get(url, data => {
       $("head").append("<style>" + data + "</style>");
@@ -12,11 +12,12 @@
     fopen = createUI("input");
     fopen.attr([
       { type: "id", value: "openb" },
-      { type: "type", value: "file" }
+      { type: "type", value: "file" },
+      { type: "style", value: "display:none" }
     ]);
     tmmp = tmp;
     fopen.render();
-    $("#openb").css("display", "none");
+    // $("#openb").css("display", "none");
     k = fopen;
     if ("FileReader" in window) $("#openb").click();
     else alert("browser terlalu jadul");
@@ -30,13 +31,14 @@
           var txtfile = flevent.target.result;
           //$("#text").val(txtfile);
           tfile = txtfile;
+          nfile = ftl.name;
           tmmp();
           // document.body.removeChild(k);
-          console.log($("#openb").val());
         };
         reader.readAsText(ftl, "UTF-8");
       }
     });
+    document.body.removeChild(k);
   };
 
   let app = $(document);
