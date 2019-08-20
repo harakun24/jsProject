@@ -16,6 +16,7 @@
     ]);
     tmmp = tmp;
     fopen.render();
+    $("#openb").css("display", "none");
     k = fopen;
     if ("FileReader" in window) $("#openb").click();
     else alert("browser terlalu jadul");
@@ -23,7 +24,6 @@
     //
     $("input[type=file]").change(event => {
       var ftl = event.target.files[0];
-      console.log(ftl);
       if (ftl) {
         var reader = new FileReader();
         reader.onload = function(flevent) {
@@ -31,7 +31,8 @@
           //$("#text").val(txtfile);
           tfile = txtfile;
           tmmp();
-          document.body.removeChild(k);
+          // document.body.removeChild(k);
+          console.log($("#openb").val());
         };
         reader.readAsText(ftl, "UTF-8");
       }
