@@ -16,6 +16,8 @@ open(() => {
   btn.attr([{ type: "id", value: "btndownload" }]);
   $("#btndownload").click(() => {
     // upload($("#fname").val(), $("#text"));
-    upload();
+    upload(() => {
+      console.log(tfile);
+    });
   });
 });

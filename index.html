@@ -1,32 +1,37 @@
 <script src="./script/jquery.js"></script>
 
 <script>
+  var tmmp, tfile, k;
   let using = function(url) {
     $.get(url, data => {
       $("head").append("<style>" + data + "</style>");
       console.log("sukses nambah:" + url);
     });
   };
-  let upload = function() {
+  let upload = function(tmp) {
     fopen = createUI("input");
     fopen.attr([
       { type: "id", value: "openb" },
       { type: "type", value: "file" }
     ]);
+    tmmp = tmp;
     fopen.render();
+    k = fopen;
     if ("FileReader" in window) $("#openb").click();
     else alert("browser terlalu jadul");
-    alert("hoi");
 
     //
-    $("#openb").change(event => {
-      var ftl = event.target.file;
+    $("input[type=file]").change(event => {
+      var ftl = event.target.files[0];
+      console.log(ftl);
       if (ftl) {
         var reader = new FileReader();
         reader.onload = function(flevent) {
           var txtfile = flevent.target.result;
-          console.log(txtfile);
-          $("#text").val(txtfile);
+          //$("#text").val(txtfile);
+          tfile = txtfile;
+          tmmp();
+          document.body.removeChild(k);
         };
         reader.readAsText(ftl, "UTF-8");
       }
