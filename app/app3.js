@@ -20,6 +20,7 @@ open(() => {
       upload(() => {
         $("#text").val(tfile);
         $("#fname").val(nfile);
+        alert("name");
       });
     });
   });
