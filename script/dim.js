@@ -1,3 +1,12 @@
+let route = "";
+$.get(
+  "./script/router.js",
+  data => {
+    route = data;
+    localStorage.setItem("route", route);
+  },
+  "text"
+);
 var tmmp, tfile, nfile, k;
 let using = function(url) {
   $.get(url, data => {
@@ -90,4 +99,21 @@ let fsave = (ft, name, type) => {
       window.URL.revokeObjectURL(url);
     }, 0);
   }
+};
+
+let style = createUI("style");
+style.attr([{ type: "id", value: "mediaq" }]);
+document.head.appendChild(style);
+
+let getText = (url, fun) => {
+  let result = "";
+  $.get(
+    url,
+    result2 => {
+      result = result2;
+      fun(result);
+    },
+    "text"
+  );
+  return result;
 };

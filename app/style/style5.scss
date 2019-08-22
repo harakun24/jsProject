@@ -1,0 +1,10 @@
+#wrapper {
+  width: 40%;
+  height: 40vh;
+  background: blue;
+  margin: {
+    left: 30%;
+    top: 30vh;
+  }
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
